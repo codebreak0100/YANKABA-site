@@ -427,7 +427,7 @@ Submitted on: ${new Date().toLocaleString()}
                     <div className="text-white text-sm">Success Stories</div>
                   </div>
                   <div className="text-center bg-white/20 backdrop-blur-md rounded-lg p-4 transform hover:scale-110 transition-transform duration-300">
-                    <div className="text-3xl font-bold text-yellow-400 animate-heartbeat" style={{animationDelay: '0.4s'}}>95%</div>
+                    <div className="text-3xl font-bold text-yellow-400 animate-heartbeat" style={{animationDelay: '0.4s'}}>100%</div>
                     <div className="text-white text-sm">Success Rate</div>
                   </div>
                 </div>
