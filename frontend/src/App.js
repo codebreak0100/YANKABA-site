@@ -5,6 +5,7 @@ const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentStudentSlide, setCurrentStudentSlide] = useState(0);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -65,6 +66,71 @@ const App = () => {
     }
   ];
 
+  const studentImages = [
+    {
+      url: "https://images.pexels.com/photos/7683897/pexels-photo-7683897.jpeg",
+      title: "Campus Life",
+      description: "International students enjoying university life"
+    },
+    {
+      url: "https://images.pexels.com/photos/6214718/pexels-photo-6214718.jpeg",
+      title: "Library Studies", 
+      description: "Collaborative learning environment"
+    },
+    {
+      url: "https://images.pexels.com/photos/5940841/pexels-photo-5940841.jpeg",
+      title: "Team Work",
+      description: "Students working together on projects"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1689785380577-93f35f4d6bf9",
+      title: "Graduation Day",
+      description: "Celebrating academic achievements"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
+      title: "Study Groups",
+      description: "Collaborative learning sessions"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1543269865-cbf427effbad",
+      title: "Campus Friends",
+      description: "Building lifelong friendships"
+    },
+    {
+      url: "https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg",
+      title: "Graduation Ceremony",
+      description: "Throwing caps in celebration"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1594750852563-5ed8e0421d40",
+      title: "Academic Success",
+      description: "Diverse graduates in academic regalia"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846",
+      title: "University Community",
+      description: "International students on campus"
+    },
+    {
+      url: "https://images.pexels.com/photos/5905459/pexels-photo-5905459.jpeg",
+      title: "Global Students",
+      description: "Diverse international student community"
+    }
+  ];
+
+  const nextStudentSlide = () => {
+    setCurrentStudentSlide((prev) => (prev + 1) % studentImages.length);
+  };
+
+  const prevStudentSlide = () => {
+    setCurrentStudentSlide((prev) => (prev - 1 + studentImages.length) % studentImages.length);
+  };
+
+  const goToStudentSlide = (index) => {
+    setCurrentStudentSlide(index);
+  };
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
   };
@@ -81,6 +147,12 @@ const App = () => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
     return () => clearInterval(interval);
+  }, []);
+
+  // Auto-slide functionality for student slider
+  useEffect(() => {
+    const studentInterval = setInterval(nextStudentSlide, 4000); // Change slide every 4 seconds
+    return () => clearInterval(studentInterval);
   }, []);
 
   const handleInputChange = (e) => {
@@ -112,7 +184,7 @@ Submitted on: ${new Date().toLocaleString()}
     // Create mailto link
     const subject = encodeURIComponent(`New Application - ${formData.fullName}`);
     const body = encodeURIComponent(emailContent);
-    const mailtoLink = `mailto:tahirhafizsharif@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:support@yankabaedu.com?subject=${subject}&body=${body}`;
     
     // Open email client
     window.location.href = mailtoLink;
@@ -355,7 +427,7 @@ Submitted on: ${new Date().toLocaleString()}
                     <div className="text-white text-sm">Success Stories</div>
                   </div>
                   <div className="text-center bg-white/20 backdrop-blur-md rounded-lg p-4 transform hover:scale-110 transition-transform duration-300">
-                    <div className="text-3xl font-bold text-yellow-400 animate-heartbeat" style={{animationDelay: '0.4s'}}>100%</div>
+                    <div className="text-3xl font-bold text-yellow-400 animate-heartbeat" style={{animationDelay: '0.4s'}}>95%</div>
                     <div className="text-white text-sm">Success Rate</div>
                   </div>
                 </div>
@@ -1099,6 +1171,88 @@ Submitted on: ${new Date().toLocaleString()}
                 <p className="text-gray-600 italic">"{testimonial.testimonial}"</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Student Gallery Section */}
+      <section id="student-gallery" className="py-20 bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Amazing Students</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Meet our diverse community of international students who are living their dreams in Egypt
+            </p>
+          </div>
+
+          {/* Student Image Slider */}
+          <div className="relative max-w-5xl mx-auto">
+            <div className="relative w-full h-96 overflow-hidden rounded-3xl shadow-2xl border-4 border-white/50">
+              {/* Slider Images */}
+              <div 
+                className="flex transition-transform duration-700 ease-in-out h-full"
+                style={{ transform: `translateX(-${currentStudentSlide * 100}%)` }}
+              >
+                {studentImages.map((image, index) => (
+                  <div key={index} className="w-full h-full flex-shrink-0 relative group">
+                    <img 
+                      src={image.url}
+                      alt={image.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-6 left-6 right-6 text-white">
+                      <h3 className="text-2xl font-bold mb-2">{image.title}</h3>
+                      <p className="text-lg opacity-90">{image.description}</p>
+                    </div>
+                    
+                    {/* Decorative overlay */}
+                    <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full">
+                      <span className="text-white text-sm font-semibold">YANKABA Student</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Navigation Arrows */}
+              <button 
+                onClick={prevStudentSlide}
+                className="absolute left-6 top-1/2 -translate-y-1/2 bg-gradient-to-r from-blue-500/20 to-green-500/20 backdrop-blur-md text-white p-3 rounded-full hover:from-blue-500/30 hover:to-green-500/30 transition-all duration-300 z-10 shadow-lg"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              <button 
+                onClick={nextStudentSlide}
+                className="absolute right-6 top-1/2 -translate-y-1/2 bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-md text-white p-3 rounded-full hover:from-green-500/30 hover:to-blue-500/30 transition-all duration-300 z-10 shadow-lg"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+
+              {/* Slide Indicators */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                {studentImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToStudentSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentStudentSlide 
+                        ? 'bg-white shadow-lg scale-125' 
+                        : 'bg-white/60 hover:bg-white/80'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Floating decorative elements */}
+            <div className="absolute -top-8 -left-8 w-20 h-20 bg-gradient-to-r from-blue-400 to-green-400 rounded-full opacity-20 animate-float"></div>
+            <div className="absolute -bottom-8 -right-8 w-16 h-16 bg-gradient-to-r from-green-400 to-blue-400 rounded-full opacity-30 animate-float" style={{animationDelay: '1s'}}></div>
+            <div className="absolute top-1/4 -right-12 w-12 h-12 bg-gradient-to-r from-yellow-400 to-red-400 rounded-full opacity-25 animate-bounce"></div>
           </div>
         </div>
       </section>
