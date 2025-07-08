@@ -993,7 +993,7 @@ Submitted on: ${new Date().toLocaleString()}
                   <div className="bg-gradient-to-r from-green-50 to-green-100 border-3 border-green-300 rounded-xl p-6 shadow-lg">
                     <div className="text-center mb-4">
                       <h4 className="text-2xl font-bold text-green-800 mb-2">🏆 PREMIUM SCHOLARSHIP PACKAGE</h4>
-                      <div className="text-4xl font-bold text-green-600">$6,000</div>
+                      <div className="text-4xl font-bold text-green-600">$8,000</div>
                     </div>
                     
                     <div className="grid md:grid-cols-2 gap-4 text-sm text-green-800">
@@ -1012,7 +1012,7 @@ Submitted on: ${new Date().toLocaleString()}
                   <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-3 border-blue-300 rounded-xl p-6 shadow-lg">
                     <div className="text-center">
                       <h4 className="text-2xl font-bold text-blue-800 mb-2">💎THE TOTAL COSTS OF ADMISSION AND SCHOLARSHIP </h4>
-                      <div className="text-5xl font-bold text-blue-600 mb-2">$8,595</div>
+                      <div className="text-5xl font-bold text-blue-600 mb-2">$10,595</div>
                       <div className="bg-yellow-200 text-yellow-800 px-4 py-2 rounded-full inline-block font-bold">
                         🚀 THEN STUDY COMPLETELY FREE FOR REMAINING YEARS!
                       </div>
