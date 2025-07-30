@@ -237,13 +237,13 @@ Submitted on: ${new Date().toLocaleString()}
   useEffect(() => {
     document.title = 'YANKABA Education Consultancy - Study in Egypt';
     
-    // Create favicon
+    /* Create favicon
     const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/x-icon';
     link.rel = 'shortcut icon';
     link.href = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23dc2626"/><text x="50" y="35" font-family="Arial" font-size="12" fill="white" text-anchor="middle" font-weight="bold">YANKABA</text><text x="50" y="50" font-family="Arial" font-size="8" fill="white" text-anchor="middle">EDUCATION</text><text x="50" y="65" font-family="Arial" font-size="8" fill="white" text-anchor="middle">CONSULTANCY</text></svg>';
     document.getElementsByTagName('head')[0].appendChild(link);
-  }, []);
+  }, []); */
 
   return (
     <div className="App">
