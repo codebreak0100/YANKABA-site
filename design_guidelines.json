@@ -1,0 +1,88 @@
+{
+  "theme": "light",
+  "archetype": "Archetype 4 (Swiss & High-Contrast) adjusted for Premium Education Consultancy",
+  "design_philosophy": "A sophisticated, editorial-style layout using generous negative space, crisp borders, and a striking light/dark red color palette. It should evoke trust, prestige, and clarity.",
+  "colors": {
+    "background": "#FAFAFA",
+    "surface": "#FFFFFF",
+    "primary_dark": "#7A0016",
+    "primary_light": "#E63946",
+    "text_main": "#111827",
+    "text_muted": "#4B5563",
+    "border": "#E5E7EB",
+    "accent_subtle": "#FFF5F5"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Cabinet Grotesk",
+      "weights": ["300", "500", "800"],
+      "usage": "Use tight letter spacing (tracking-tighter) for H1 and H2. Avoid centering unless strictly necessary for the layout."
+    },
+    "body": {
+      "font_family": "Manrope",
+      "weights": ["400", "500"],
+      "usage": "Leading-relaxed for readability."
+    },
+    "scales": {
+      "h1": "text-5xl lg:text-7xl",
+      "h2": "text-3xl lg:text-5xl",
+      "h3": "text-xl lg:text-2xl",
+      "body": "text-base",
+      "labels": "text-xs tracking-[0.2em] uppercase"
+    }
+  },
+  "layout_and_spacing": {
+    "philosophy": "Generous Spacing Philosophy (2-3x typical). Avoid tight boxes. Containers must have internal padding.",
+    "section_padding": "py-24 lg:py-32",
+    "grid_system": "Bento Grid Protocol. Use asymmetric spans (col-span-full vs col-span-4) for feature highlights.",
+    "alignment": "Left-aligned for all main content. Center-align only for small standalone components."
+  },
+  "surfaces_and_components": {
+    "navbar": "Glassmorphism: backdrop-blur-xl bg-white/80 border-b border-gray-200. Must have z-50.",
+    "cards": "Flat solid surfaces (bg-white). 1px subtle border (border-gray-200). Hover state: slight lift (-translate-y-1), subtle shadow (shadow-lg), and border color changes to primary_light.",
+    "buttons": "Sharp corners or very slight rounding (rounded-md). High contrast. Primary CTA is solid primary_dark, hover is primary_light.",
+    "footer": "Massive contrast shift. Dark Red background (#7A0016) with white text. py-24."
+  },
+  "motion_and_interaction": {
+    "hover": "All interactive elements must explicitly change state on hover. Buttons should transition colors smoothly.",
+    "entrance": "Staggered fade-up for grid items.",
+    "marquee": "Use a slow-moving editorial ribbon for the university list to create a living texture if needed, otherwise clean grids."
+  },
+  "media_and_assets": {
+    "hero_overlay": "Gradient overlay from black/60 via black/30 to transparent. Never fully cover the image.",
+    "images": {
+      "hero": {
+        "url": "https://images.unsplash.com/photo-1594750852563-5ed8e0421d40?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxhZnJpY2FuJTIwc3R1ZGVudHMlMjBncmFkdWF0aW9ufGVufDB8fHx8MTc4MjM0OTAxNXww&ixlib=rb-4.1.0&q=85",
+        "description": "Diverse African students graduating. Inspires success and attainment."
+      },
+      "about_section": {
+        "url": "https://images.unsplash.com/photo-1746640662304-59a8ac46f809?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHw0fHxjYWlybyUyMHVuaXZlcnNpdHklMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgyMzQ5MDE1fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Large Cairo university dome architecture."
+      },
+      "gallery": [
+        "https://images.pexels.com/photos/10744384/pexels-photo-10744384.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.pexels.com/photos/33578925/pexels-photo-33578925.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "https://images.unsplash.com/photo-1628198661856-102874fb9d82?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHw0fHxhZnJpY2FuJTIwc3R1ZGVudHMlMjBncmFkdWF0aW9ufGVufDB8fHx8MTc4MjM0OTAxNXww&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1599431728652-3f654a277661?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwxfHxjYWlybyUyMHVuaXZlcnNpdHklMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzgyMzQ5MDE1fDA&ixlib=rb-4.1.0&q=85",
+        "https://images.unsplash.com/photo-1761370981247-1dfd749ec96b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHw0fHxhZnJpY2FuJTIwc3R1ZGVudHMlMjBzdHVkeWluZyUyMHRvZ2V0aGVyfGVufDB8fHx8MTc4MjM0OTAxNXww&ixlib=rb-4.1.0&q=85"
+      ]
+    },
+    "icons": "lucide-react for high-quality, consistent stroke icons."
+  },
+  "content_structure": {
+    "hero": "Tagline: 'Begin Your Journey to One of the Best Egyptian Universities'. Stats: 13+ Universities, 1000+ Success Stories, 100% Success Rate. CTAs: Start Your Journey, Scholarship Info.",
+    "about": "Official Educational Partner via WAFEDEN. 4 feature cards.",
+    "services": "6 cards covering selection, application, visa, accommodation, pre-departure, ongoing support.",
+    "universities": "13 partner universities (grid).",
+    "fields_of_study": "12+ programs categorized.",
+    "requirements_and_costs": "5 documents list. Cost breakdown table highlighting Total: $10,595 and Premium Scholarship Package: $8000.",
+    "how_it_works": "4 steps timeline or grid.",
+    "success_stories": "Testimonials from Sadat Umar, Khadija Hassan, Tahir Hafiz.",
+    "apply_now_form": "WhatsApp/Email action only. No backend.",
+    "contact": "Phone: +2347041614138, WhatsApp: +2347065405269, Email: tahirhafizsharif@gmail.com, Floating WhatsApp Button."
+  },
+  "accessibility_and_testing": {
+    "testing_attributes": "All interactive and key informational elements MUST include a data-testid attribute.",
+    "contrast": "Ensure text over images has sufficient shadow or dark gradient behind it."
+  }
+}
