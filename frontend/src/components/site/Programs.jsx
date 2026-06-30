@@ -1,4 +1,4 @@
-import { useState } from "react";
+/*import { useState } from "react";
 import { FIELDS } from "@/lib/data";
 import {
   Heart,
@@ -30,7 +30,54 @@ const CAT_ICONS = {
   "Law & Political Studies": BookOpen,
   "Arts, Languages & Humanities": BookOpen,
   Education: BookOpen,
+};*/
+
+import { useState } from "react";
+import { FIELDS } from "@/lib/data";
+import {
+  Heart,
+  Cpu,
+  Wrench,
+  Atom,
+  BookOpen,
+  Globe,
+  Briefcase,
+  Newspaper,
+  Scale,
+  GraduationCap,
+  Leaf,
+} from "lucide-react";
+
+const CATEGORIES = [
+  { name: "All", icon: Globe },
+  { name: "Health Sciences", icon: Heart },
+  { name: "Computer Science", icon: Cpu },
+  { name: "Engineering", icon: Wrench },
+  { name: "Natural Sciences", icon: Atom },
+  { name: "Business & Management", icon: Briefcase },
+  { name: "Media & Communication", icon: Newspaper },
+  { name: "Law & Political Studies", icon: Scale },
+  { name: "Arts, Languages & Humanities", icon: BookOpen },
+  { name: "Veterinary Medicine", icon: Heart },
+  { name: "Agriculture", icon: Leaf },
+  { name: "Education", icon: GraduationCap },
+];
+
+const CAT_ICONS = {
+  "Health Sciences": Heart,
+  "Computer Science": Cpu,
+  Engineering: Wrench,
+  "Natural Sciences": Atom,
+  "Business & Management": Briefcase,
+  "Media & Communication": Newspaper,
+  "Law & Political Studies": Scale,
+  "Arts, Languages & Humanities": BookOpen,
+  "Veterinary Medicine": Heart,
+  Agriculture: Leaf,
+  Education: GraduationCap,
 };
+
+
 
 /*const CATEGORIES = [
   { name: "All", icon: Globe },
