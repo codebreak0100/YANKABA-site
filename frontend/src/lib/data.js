@@ -383,8 +383,24 @@ export const FIELDS = [
   // Education
   { name: "Education", duration: "4 years", category: "Education" },
   { name: "Special Education", duration: "4 years", category: "Education" },
+
+   // Veterinary Medicine
+  { name: "Veterinary Medicine", duration: "5 years", category: "Veterinary Medicine" },
+
+  // Agriculture
+  { name: "Agriculture", duration: "4 years", category: "Agriculture" },
+  { name: "Agricultural Economics", duration: "4 years", category: "Agriculture" },
+  { name: "Agronomy", duration: "4 years", category: "Agriculture" },
+  { name: "Animal Production", duration: "4 years", category: "Agriculture" },
+  { name: "Plant Protection", duration: "4 years", category: "Agriculture" },
+  { name: "Food Science & Technology", duration: "4 years", category: "Agriculture" },
+  { name: "Horticulture", duration: "4 years", category: "Agriculture" },
+  { name: "Soil & Water Sciences", duration: "4 years", category: "Agriculture" },
+
+
 ];
 
+ 
 export const DOCUMENTS = [
   "Copy of Passport Data Page",
   "Certificate of Birth",
