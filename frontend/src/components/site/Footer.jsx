@@ -37,16 +37,25 @@ export default function Footer() {
             </p>
 
             <div className="mt-8 flex items-center gap-3">
-              {[Instagram, Facebook, Twitter].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  data-testid={`footer-social-${i}`}
-                  className="w-10 h-10 rounded-md border border-white/20 grid place-items-center hover:bg-white hover:text-brand-dark transition-colors"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
+              <a
+                href="https://www.instagram.com/yankabaeducationconsultancy?utm_source=qr&igsh=a3EwaTdyNDBqaWVh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-md border border-white/20 grid place-items-center hover:bg-pink-600 hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+
+              <a
+                href="https://www.facebook.com/share/18ogGtfPHY/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-md border border-white/20 grid place-items-center hover:bg-blue-600 hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook size={18} />
+              </a>
             </div>
           </div>
 
