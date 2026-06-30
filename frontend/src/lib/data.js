@@ -444,7 +444,7 @@ export const TESTIMONIALS = [
     image: student1,
   },
   {
-    name: "Amira Ismail",
+    name: "Dr Amira Ismail",
     country: "Nigeria",
     course: "Medicine · Cairo University",
     quote:
@@ -452,7 +452,7 @@ export const TESTIMONIALS = [
     image: student2,
   },
   {
-    name: "Maryam Umar Aliyu",
+    name: "RN Maryam Umar Aliyu",
     country: "Nigeria",
     course: "Nursing · Alexandria University",
     quote:
@@ -460,7 +460,7 @@ export const TESTIMONIALS = [
     image: student3,
   },
   {
-    name: "Halimatu Sadiya Abubakar",
+    name: "Dr Halimatu Sadiya Abubakar",
     country: "Nigeria",
     course: "Medicine · Alexandria University",
     quote:
