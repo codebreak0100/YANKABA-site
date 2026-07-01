@@ -313,12 +313,12 @@ export const UNIVERSITIES = [
 
 export const FIELDS = [
   // Health Sciences
-  { name: "Medicine", duration: "6 years", category: "Health Sciences" },
-  { name: "Dentistry", duration: "6 years", category: "Health Sciences" },
-  { name: "Pharmacy", duration: "5 years", category: "Health Sciences" },
-  { name: "Nursing", duration: "4 years", category: "Health Sciences" },
-  { name: "Physiotherapy", duration: "5 years", category: "Health Sciences" },
-  { name: "Medical Laboratory Technology (MLT)", duration: "4 years", category: "Health Sciences" },
+  { name: "Medicine", duration: "5 years", category: "Health Sciences" },
+  { name: "Dentistry", duration: "5 years", category: "Health Sciences" },
+  { name: "Pharmacy", duration: "4 years", category: "Health Sciences" },
+  { name: "Nursing", duration: "5 years", category: "Health Sciences" },
+  { name: "Physiotherapy", duration: "4 years", category: "Health Sciences" },
+  { name: "Medical Laboratory Technology (MLT)", duration: "5 years", category: "Health Sciences" },
   { name: "Radiography & Medical Imaging Technology (RMIT)", duration: "4 years", category: "Health Sciences" },
   { name: "Respiratory Care Technology (RCT)", duration: "4 years", category: "Health Sciences" },
   { name: "Biotechnology", duration: "4 years", category: "Health Sciences" },
@@ -334,14 +334,14 @@ export const FIELDS = [
   { name: "Game Development", duration: "4 years", category: "Computer Science" },
 
   // Engineering
-  { name: "Architectural Engineering", duration: "5 years", category: "Engineering" },
-  { name: "Civil Engineering", duration: "5 years", category: "Engineering" },
-  { name: "Industrial & Systems Engineering", duration: "5 years", category: "Engineering" },
-  { name: "Computer & Software Engineering", duration: "5 years", category: "Engineering" },
-  { name: "Electronic & Communication Engineering", duration: "5 years", category: "Engineering" },
-  { name: "Electrical Power & Machines Engineering", duration: "5 years", category: "Engineering" },
-  { name: "Biomedical Engineering", duration: "5 years", category: "Engineering" },
-  { name: "Mechatronics Engineering", duration: "5 years", category: "Engineering" },
+  { name: "Architectural Engineering", duration: "4 years", category: "Engineering" },
+  { name: "Civil Engineering", duration: "4 years", category: "Engineering" },
+  { name: "Industrial & Systems Engineering", duration: "4 years", category: "Engineering" },
+  { name: "Computer & Software Engineering", duration: "4 years", category: "Engineering" },
+  { name: "Electronic & Communication Engineering", duration: "4 years", category: "Engineering" },
+  { name: "Electrical Power & Machines Engineering", duration: "4 years", category: "Engineering" },
+  { name: "Biomedical Engineering", duration: "4 years", category: "Engineering" },
+  { name: "Mechatronics Engineering", duration: "4 years", category: "Engineering" },
 
   // Natural Sciences
   { name: "Chemistry", duration: "4 years", category: "Natural Sciences" },
@@ -385,7 +385,7 @@ export const FIELDS = [
   { name: "Special Education", duration: "4 years", category: "Education" },
 
    // Veterinary Medicine
-  { name: "Veterinary Medicine", duration: "5 years", category: "Veterinary Medicine" },
+  { name: "Veterinary Medicine", duration: "4 years", category: "Veterinary Medicine" },
 
   // Agriculture
   { name: "Agriculture", duration: "4 years", category: "Agriculture" },
