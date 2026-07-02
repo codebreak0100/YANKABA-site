@@ -8,7 +8,11 @@ import gallery6 from "../assets/gallery/gallery6.jpg";
 import gallery7 from "../assets/gallery/gallery7.jpg";
 import gallery8 from "../assets/gallery/gallery8.jpg";
 import gallery9 from "../assets/gallery/gallery9.jpg";
-import gallery10 from "../assets/gallery/gallery10.jpg";
+import gallery11 from "../assets/gallery/gallery10.jpg";
+import gallery10 from "../assets/gallery/gallery11.jpg";
+import gallery12 from "../assets/gallery/gallery12.jpg";
+import gallery13 from "../assets/gallery/gallery13.jpg";
+import gallery14 from "../assets/gallery/gallery14.jpg";
 
 // Student images
 import student1 from "../assets/students/student1.jpg";
@@ -514,6 +518,10 @@ export const GALLERY = [
   gallery8,
   gallery9,
   gallery10,
+  gallery12,
+  gallery11,
+  gallery13,
+  gallery14,
 ];
 
 export const FAQS = [
