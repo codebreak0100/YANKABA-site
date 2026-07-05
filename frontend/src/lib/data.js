@@ -520,7 +520,7 @@ export const GALLERY = [
   gallery10,
   gallery12,
   gallery11,
-  gallery13,
+
   gallery14,
 ];
 
