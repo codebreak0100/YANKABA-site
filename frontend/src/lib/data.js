@@ -301,14 +301,14 @@ export const UNIVERSITIES = [
   },
   {
     name: "Port Said University",
-    url: "https://www.deltauniv.edu.eg/",
+    url: "https://www.said.edu.eg/",
     city: "Port Said",
     founded: "2010",
     image: university1, 
   },
   {
     name: "Suez University",
-    url: "https://www.deltauniv.edu.eg/",
+    url: "https://www.suez.edu.eg/",
     city: "Suez",
     founded: "1975",
     image: university2,
@@ -538,7 +538,6 @@ export const GALLERY = [
       "Celebrating cultural diversity through the International Students Cultural Day event.",
   },
   {
-  {
     image: gallery3,
     title: "International Cultural Day",
     description:
@@ -551,7 +550,7 @@ export const GALLERY = [
       "Celebrating cultural diversity through performances, exhibitions, and traditional attire during the International Cultural Day event.",
   },
   {
-     image: gallery5,
+    image: gallery5,
     title: "Ministry of Higher Education Event",
     description:
       "A special occasion organized by the Ministry of Higher Education, bringing together officials and international students to promote collaboration and academic engagement.",
