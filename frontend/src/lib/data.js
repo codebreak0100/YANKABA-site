@@ -595,13 +595,13 @@ export const GALLERY = [
     image: gallery12,
     title: "Graduation Ceremony",
     description:
-      "Celebrating the academic achievements of international students during the graduation ceremony.",
+      "Celebrating Students' Academic Success in Egypt.",
   },
   {
     image: gallery14,
     title: "Graduation Ceremony",
     description:
-      "Honoring graduates as they complete their academic journey in Egypt.",
+      "Yankaba Students Completing Their Academic Journey in Egypt.",
   },
 ];
 
