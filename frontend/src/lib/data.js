@@ -507,7 +507,7 @@ export const TESTIMONIALS = [
   "https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg?auto=compress&cs=tinysrgb&w=900",
   "https://images.unsplash.com/photo-1594750852563-5ed8e0421d40?crop=entropy&cs=srgb&fm=jpg&w=900&q=85",
 ];*/
-export const GALLERY = [
+/*export const GALLERY = [
   gallery1,
   gallery2,
   gallery3,
@@ -522,6 +522,88 @@ export const GALLERY = [
   gallery11,
 
   gallery14,
+];*/
+
+export const GALLERY = [
+  {
+    image: gallery1,
+    title: "Meeting with the Minister of Higher Education",
+    description:
+      "A successful meeting with the Minister of Higher Education to review ongoing efforts to support incoming international students.",
+  },
+  {
+    image: gallery2,
+    title: "International Cultural Day",
+    description:
+      "Celebrating cultural diversity through the International Students Cultural Day event.",
+  },
+  {
+  {
+    image: gallery3,
+    title: "International Cultural Day",
+    description:
+      "Students proudly representing their cultures and traditions during the International Cultural Day celebration.",
+  },
+  {
+    image: gallery4,
+    title: "International Cultural Day",
+    description:
+      "Celebrating cultural diversity through performances, exhibitions, and traditional attire during the International Cultural Day event.",
+  },
+  {
+     image: gallery5,
+    title: "Ministry of Higher Education Event",
+    description:
+      "A special occasion organized by the Ministry of Higher Education, bringing together officials and international students to promote collaboration and academic engagement.",
+  },
+  {
+    image: gallery6,
+    title: "Arabic Language Classes",
+    description:
+      "International students participating in Arabic language classes.",
+  },
+  {
+    image: gallery7,
+    title: "Ministry of Higher Education Meeting",
+    description:
+      "A successful meeting between the Ministry of Higher Education and the Office of International Students to strengthen collaboration and student support.",
+  },
+  {
+    image: gallery8,
+    title: "Inauguration of Senghor University's New Campus",
+    description:
+      "The President of France attended the inauguration of Senghor University's new main campus in Alexandria.",
+  },
+  {
+    image: gallery9,
+    title: "Official Visit",
+    description:
+      "An official visit to the Director of the Office of International Students to discuss initiatives and student services.",
+  },
+  {
+    image: gallery10,
+    title: "International Cultural Day",
+    description:
+      "Students showcasing their cultures and traditions during the International Students Cultural Day celebration.",
+  },
+  {
+    image: gallery11,
+    title: "International Cultural Day",
+    description:
+      "Promoting cultural exchange and unity among international students.",
+  },
+  {
+    image: gallery12,
+    title: "Graduation Ceremony",
+    description:
+      "Celebrating the academic achievements of international students during the graduation ceremony.",
+  },
+  {
+    image: gallery14,
+    title: "Graduation Ceremony",
+    description:
+      "Honoring graduates as they complete their academic journey in Egypt.",
+  },
 ];
 
 export const FAQS = [
