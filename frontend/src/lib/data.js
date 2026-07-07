@@ -539,9 +539,9 @@ export const GALLERY = [
   },
   {
     image: gallery3,
-    title: "International Cultural Day",
+    title: "Arabic Language Classes,
     description:
-      "Students proudly representing their cultures and traditions during the International Cultural Day celebration.",
+      "2025/2026 Arabic Class Studnts.",
   },
   {
     image: gallery4,
