@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff0f4">
+<title>Une petite lettre pour toi 💌</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap');
+:root{--ink:#622c43;--rose:#b83260;--muted:#865569}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;min-height:100svh;background:#fff1f4;color:var(--ink);font-family:"DM Sans",sans-serif}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 8% 15%,#ffd3e2,transparent 48%),radial-gradient(ellipse at 95% 85%,#e6dbff,transparent 48%),radial-gradient(ellipse at 90% 0,#fff4d5,transparent 42%)}
+button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:focus-visible,summary:focus-visible{outline:3px solid #8655ac;outline-offset:5px}
+::selection{background:#fac4d8}
+header,main,footer{position:relative;z-index:1}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:24px clamp(18px,5vw,70px)}
+.brand{font:italic 27px "Cormorant Garamond",Georgia,serif}
+.languages{display:flex;background:#ffffff90;border:1px solid white;border-radius:40px;padding:4px;gap:3px}
+.languages button{border:0;border-radius:30px;padding:10px 13px;background:transparent;color:var(--ink);font-size:12px}
+.languages button[aria-pressed=true]{background:var(--ink);color:white}
+main{min-height:calc(100svh - 155px);display:grid;place-items:center;padding:30px 16px 55px}
+.card{width:min(100%,660px);position:relative;padding:clamp(35px,6vw,60px);background:#fffafbeF;border:1px solid white;border-radius:34px;text-align:center;box-shadow:0 35px 100px #91416516}
+.card:before{content:"";position:absolute;inset:10px;border:1px solid #eabac644;border-radius:26px;pointer-events:none}
+.ribbon{position:absolute;top:-16px;left:50%;transform:translateX(-50%) rotate(-3deg);background:#fff0ce;padding:9px 18px;font-size:9px;letter-spacing:1.5px;white-space:nowrap;box-shadow:0 5px 15px #602a4210}
+.scene{position:relative}
+.enter{animation:enter .65s cubic-bezier(.2,.8,.2,1) both}
+.eyebrow{font-size:9px;letter-spacing:2px;text-transform:uppercase;line-height:1.9}
+h1,h2{font:500 clamp(43px,7.8vw,69px)/1.04 "Cormorant Garamond",Georgia,serif;letter-spacing:-1.6px;margin:19px 0}
+h1 span,h2 span,h1 em,h2 em{display:block}
+h1 em,h2 em{color:var(--rose)}
+h1:focus,h2:focus{outline:none}
+.copy{font-size:14px;line-height:1.9;max-width:420px;margin:0 auto 24px;color:var(--muted)}
+.tiny{font-size:11px;line-height:1.8;color:var(--muted)}
+.primary,.secondary{min-height:49px;padding:14px 24px;border-radius:40px;font-size:13px;transition:transform .2s,box-shadow .2s,background .2s}
+.primary{border:1px solid var(--rose);background:var(--rose);color:white;box-shadow:0 8px 24px #b8326025}
+.primary:hover{background:#a02a53;transform:translateY(-3px);box-shadow:0 12px 28px #b8326035}
+.secondary{border:1px solid #dcb4c4;background:#fff7fa;color:var(--ink)}
+.secondary:hover{background:#ffe5ef}
+.text-button{border:0;background:transparent;color:var(--muted);padding:12px;font-size:11px;text-decoration:underline;text-underline-offset:4px}
+.icon{font-size:56px;margin:8px 0 18px}
+.divider{height:1px;width:45px;background:#dcb4c4;margin:24px auto}
+.envelope{display:block;position:relative;width:225px;height:154px;margin:48px auto 36px;padding:0;border:0;background:#e99cb7;border-radius:8px;box-shadow:0 22px 35px #9f41662a;perspective:800px;isolation:isolate;animation:float 3s ease-in-out 3}
+.letter{position:absolute;inset:12px 17px;background:#fffaf0;border-radius:5px;padding:20px 8px;font:italic 25px "Cormorant Garamond",Georgia,serif;color:var(--rose);z-index:1;transition:transform .7s ease .15s}
+.front{position:absolute;inset:0;z-index:3;background:linear-gradient(145deg,#fbc9d9,#f3afc7);clip-path:polygon(0 0,50% 53%,100% 0,100% 100%,0 100%);border-radius:8px}
+.flap{position:absolute;inset:0;z-index:4;background:#ffd8e5;clip-path:polygon(0 0,100% 0,50% 56%);transform-origin:top;transition:transform .6s;backface-visibility:hidden}
+.seal{position:absolute;left:calc(50% - 23px);top:59px;width:46px;height:46px;border-radius:50%;background:var(--rose);color:#ffe6ed;display:grid;place-items:center;z-index:5;font-size:23px;box-shadow:0 4px 10px #9c315130;transition:opacity .2s}
+.envelope.open{animation:none}
+.envelope.open .flap{transform:rotateX(180deg)}
+.envelope.open .seal{opacity:0}
+.envelope.open .letter{transform:translateY(-65px)}
+.couple{display:flex;justify-content:center;align-items:end;height:104px;margin:15px 0 26px}
+.blob{position:relative;width:79px;height:75px;background:#f6b6cb;border-radius:48% 48% 40% 40%;transform:rotate(-9deg)}
+.blob:last-child{background:#dfcbf1;transform:rotate(9deg);margin-left:-5px}
+.eyes{position:absolute;top:30px;left:23px;display:flex;gap:17px}
+.eyes:before,.eyes:after{content:"";width:5px;height:7px;border-radius:50%;background:var(--ink)}
+.smile{position:absolute;top:41px;left:32px;width:13px;height:8px;border-bottom:2px solid var(--ink);border-radius:50%}
+.cheeks{position:absolute;top:41px;left:12px;width:13px;height:6px;border-radius:50%;background:#e682a460;box-shadow:41px 0 #e682a460}
+.heart{align-self:start;color:var(--rose);font-size:26px;animation:beat 1.7s ease-in-out 4}
+.runway{height:90px;position:relative;margin:10px auto 0;max-width:390px}
+.runaway{position:absolute;left:0;top:0;max-width:100%;transition:transform .17s ease-out}
+.run-hint{min-height:36px;margin:0 auto;font-size:11px;line-height:1.7;color:var(--muted)}
+fieldset{border:0;padding:0;margin:24px 0}
+legend{width:100%;font-size:12px;color:var(--muted);margin-bottom:12px}
+.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.choice{min-height:108px;padding:12px 8px;border:1px solid #e3c1cf;border-radius:17px;background:#fffdfc;color:var(--ink);font-size:11px;line-height:1.5;transition:transform .2s,background .2s}
+.choice .emoji{display:block;font-size:27px;margin-bottom:7px}
+.choice:hover{transform:translateY(-4px)}
+.choice[aria-pressed=true]{background:#ffe5ef;border-color:var(--rose);box-shadow:inset 0 0 0 1px var(--rose)}
+.ticket{position:relative;margin:28px 0 24px;border:1px solid #ddb8c7;border-radius:17px;background:linear-gradient(135deg,#fff7fa,#fffaf1);text-align:left;transform:rotate(-2deg);overflow:hidden;box-shadow:0 12px 28px #9c456b0d}
+.ticket-top{padding:24px;border-bottom:1px dashed #d7a9bb}
+.ticket-title{font:500 34px/1.1 "Cormorant Garamond",Georgia,serif;margin:12px 0}
+.ticket-bottom{display:flex;justify-content:space-between;gap:15px;padding:19px 24px;font-size:10px}
+.ticket-bottom strong{display:block;font-size:12px;margin-top:5px}
+details{margin-top:24px;font-size:12px}
+summary{cursor:pointer;color:var(--rose)}
+details p{line-height:1.9;color:var(--muted)}
+footer{text-align:center;padding:0 20px 24px}
+.decor{position:fixed;pointer-events:none;color:#cc729149;font:55px Georgia,serif}
+.d1{top:20%;left:7%;transform:rotate(-18deg)}
+.d2{bottom:12%;right:7%;transform:rotate(18deg);font-size:80px}
+.d3{top:22%;right:12%;font-size:26px}
+.particle{position:fixed;left:0;top:0;pointer-events:none;z-index:10;font-size:22px}
+@keyframes enter{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-10px) rotate(1deg)}}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+@media(max-width:480px){header{padding:19px 16px}.brand{font-size:23px}.languages button{padding:9px 10px}.card{padding:38px 22px}.choices{gap:6px}.choice{font-size:10px}.decor{opacity:.5}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <span class="brand" data-i18n="brand"></span>
+  <div class="languages" role="group" aria-label="Langue / Language">
+    <button type="button" data-lang="fr" lang="fr" aria-pressed="true">Français</button>
+    <button type="button" data-lang="en" lang="en" aria-pressed="false">English</button>
+  </div>
+</header>
+<div class="decor d1" aria-hidden="true">♡</div>
+<div class="decor d2" aria-hidden="true">♡</div>
+<div class="decor d3" aria-hidden="true">✧</div>
+
+<main>
+<div class="card">
+  <div class="ribbon" data-i18n="ribbon"></div>
+
+  <section class="scene" id="intro" aria-labelledby="intro-title">
+    <div class="eyebrow" data-i18n="introLabel"></div>
+    <h1 id="intro-title" tabindex="-1"><span data-i18n="introTitle"></span><em data-i18n="introEm"></em></h1>
+    <button class="envelope" id="envelope" data-label="open">
+      <span class="letter" aria-hidden="true"><span data-i18n="letter"></span><br>♡</span>
+      <span class="front" aria-hidden="true"></span>
+      <span class="flap" aria-hidden="true"></span>
+      <span class="seal" aria-hidden="true">♥</span>
+    </button>
+    <p class="copy" data-i18n="introCopy"></p>
+    <p class="tiny" data-i18n="tap"></p>
+  </section>
+
+  <section class="scene" id="question" hidden aria-labelledby="question-title">
+    <div class="eyebrow" data-i18n="questionLabel"></div>
+    <div class="couple" aria-hidden="true">
+      <div class="blob"><i class="eyes"></i><i class="smile"></i><i class="cheeks"></i></div>
+      <span class="heart">♥</span>
+      <div class="blob"><i class="eyes"></i><i class="smile"></i><i class="cheeks"></i></div>
+    </div>
+    <h2 id="question-title" tabindex="-1"><span data-i18n="questionTitle"></span><em data-i18n="questionEm"></em></h2>
+    <p class="copy" data-i18n="questionCopy"></p>
+    <button class="primary" id="yes" data-i18n="yes"></button>
+    <div class="runway" id="runway">
+      <button class="secondary runaway" id="runaway" data-i18n="notYet" aria-describedby="run-hint"></button>
+    </div>
+    <p class="run-hint" id="run-hint"></p>
+    <button class="text-button" data-show="gentle" data-i18n="realLater"></button>
+  </section>
+
+  <section class="scene" id="gentle" hidden aria-labelledby="gentle-title">
+    <div class="icon" aria-hidden="true">🧸</div>
+    <div class="eyebrow" data-i18n="gentleLabel"></div>
+    <h2 id="gentle-title" tabindex="-1"><span data-i18n="gentleTitle"></span><em data-i18n="gentleEm"></em></h2>
+    <p class="copy" data-i18n="gentleCopy"></p>
+    <button class="secondary" data-show="question" data-i18n="back"></button>
+    <p class="tiny" data-i18n="noPressure"></p>
+  </section>
+
+  <section class="scene" id="planner" hidden aria-labelledby="planner-title">
+    <div class="eyebrow" data-i18n="plannerLabel"></div>
+    <h2 id="planner-title" tabindex="-1"><span data-i18n="plannerTitle"></span><em data-i18n="plannerEm"></em></h2>
+    <p class="copy" data-i18n="plannerCopy"></p>
+
+    <fieldset>
+      <legend data-i18n="activityLabel"></legend>
+      <div class="choices" id="activities">
+        <button class="choice" data-value="walk" aria-pressed="true"><span class="emoji" aria-hidden="true">🌷</span><span data-i18n="walk"></span></button>
+        <button class="choice" data-value="dinner" aria-pressed="false"><span class="emoji" aria-hidden="true">🍝</span><span data-i18n="dinner"></span></button>
+        <button class="choice" data-value="chat" aria-pressed="false"><span class="emoji" aria-hidden="true">🛋️</span><span data-i18n="chat"></span></button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend data-i18n="extraLabel"></legend>
+      <div class="choices" id="extras">
+        <button class="choice" data-value="ice" aria-pressed="true"><span class="emoji" aria-hidden="true">🍦</span><span data-i18n="ice"></span></button>
+        <button class="choice" data-value="stars" aria-pressed="false"><span class="emoji" aria-hidden="true">🌙</span><span data-i18n="stars"></span></button>
+        <button class="choice" data-value="surprise" aria-pressed="false"><span class="emoji" aria-hidden="true">🎁</span><span data-i18n="surprise"></span></button>
+      </div>
+    </fieldset>
+    <button class="primary" id="confirm" data-i18n="confirm"></button>
+    <p class="tiny" data-i18n="dress"></p>
+  </section>
+
+  <section class="scene" id="finale" hidden aria-labelledby="finale-title">
+    <div class="icon" aria-hidden="true">💘</div>
+    <div class="eyebrow" data-i18n="finalLabel"></div>
+    <h2 id="finale-title" tabindex="-1"><span data-i18n="finalTitle"></span><em data-i18n="finalEm"></em></h2>
+    <div class="ticket">
+      <div class="ticket-top">
+        <div class="eyebrow" data-i18n="ticketLabel"></div>
+        <div class="ticket-title" id="ticket-title"></div>
+        <p class="tiny" id="ticket-extra"></p>
+      </div>
+      <div class="ticket-bottom">
+        <div><span data-i18n="when"></span><strong data-i18n="together"></strong></div>
+        <div><span data-i18n="with"></span><strong data-i18n="me"></strong></div>
+      </div>
+    </div>
+    <p class="copy" data-i18n="finalCopy"></p>
+    <button class="primary" id="celebrate" data-i18n="celebrate"></button>
+    <p class="tiny" id="celebration-note" role="status"></p>
+    <details>
+      <summary data-i18n="secret"></summary>
+      <p data-i18n="secretCopy"></p>
+    </details>
+    <div class="divider"></div>
+    <p class="tiny" data-i18n="screenshot"></p>
+    <button class="secondary" data-show="planner" data-i18n="change"></button>
+  </section>
+</div>
+</main>
+<footer class="tiny" data-i18n="footer"></footer>
+
+<script>
+const translations = {
+  fr: {
+    title:"Une petite lettre pour toi 💌",
+    brand:"le bureau des petits mots.",
+    ribbon:"POUR MA PERSONNE PRÉFÉRÉE",
+    introLabel:"Ni une facture. Ni une pub. Juste moi.",
+    introTitle:"Une petite lettre.",
+    introEm:"Beaucoup de sentiments.",
+    open:"Ouvrir ta lettre",
+    letter:"psst… c’est toi.",
+    introCopy:"Quelqu’un a un énorme faible pour toi. Le suspense est insoutenable… Bon, c’est moi. Encore moi. Toujours moi. ♡",
+    tap:"Touche l’enveloppe. J’ai quelque chose à te demander.",
+    questionLabel:"Une question très sérieusement mignonne",
+    questionTitle:"Toi, moi…",
+    questionEm:"un petit rendez-vous ?",
+    questionCopy:"Le programme : te faire rire, profiter de ta présence et te regarder un peu trop en souriant. Rien d’extravagant. Juste nous.",
+    yes:"Oui, avec toi ! ♥",
+    notYet:"Pas encore 🙈",
+    runIntro:"Ce bouton est un peu timide… essaie de l’attraper. 🙈",
+    runCalm:"Aujourd’hui, même le bouton prend son temps. 🤍",
+    runKeyboard:"Au clavier, ce bouton reste sagement à sa place. 🤍",
+    jokes:[
+      "Oups… il est parti chercher son courage. 🙈",
+      "Il fait son jogging sentimental. 🏃",
+      "Ce bouton a des papillons, lui aussi. 🦋",
+      "Promis, moi je ne m’enfuis pas comme ça. 😂"
+    ],
+    realLater:"Une autre fois, vraiment 🤍",
+    gentleLabel:"Aucune pression. Beaucoup de tendresse.",
+    gentleTitle:"À ton rythme.",
+    gentleEm:"Toujours.",
+    gentleCopy:"C’est complètement d’accord. On n’a rien à précipiter. En attendant, voici un petit ours virtuel, livré avec toute mon affection.",
+    back:"Revenir à la lettre",
+    noPressure:"Tu peux aussi fermer cette page. Tu ne me dois aucune réponse. ♡",
+    plannerLabel:"Je reste calme. Enfin… j’essaie.",
+    plannerTitle:"Choisis notre",
+    plannerEm:"petit bonheur.",
+    plannerCopy:"Pas besoin d’un grand programme. Une balade comme on les aime, ou simplement un moment tranquille à discuter avec toi.",
+    activityLabel:"Qu’est-ce qui te ferait plaisir ?",
+    walk:"Se promener ensemble",
+    dinner:"Dîner à deux",
+    chat:"Je viens chez toi, on papote",
+    extraLabel:"Et pour la petite touche en plus…",
+    ice:"Une glace",
+    stars:"Regarder les étoiles",
+    surprise:"Une petite surprise",
+    confirm:"Voilà notre rendez-vous ! ✨",
+    dress:"Tenue conseillée : celle dans laquelle tu te sens bien.",
+    finalLabel:"Sourire impossible à dissimuler",
+    finalTitle:"C’est un rendez-vous.",
+    finalEm:"Et j’ai déjà hâte.",
+    ticketLabel:"Le club de nous deux · Deux places",
+    when:"QUAND",
+    together:"On choisit ensemble",
+    with:"AVEC",
+    me:"Moi, évidemment ♡",
+    finalCopy:"Le meilleur dans ce programme, ce n’est ni l’endroit, ni l’activité. C’est toi.",
+    celebrate:"Encore des papillons 🦋",
+    calmCelebration:"Tous ces petits papillons sont pour toi. 🦋 ♡",
+    secret:"Psst… une dernière chose.",
+    secretCopy:"Tu n’as pas besoin d’une journée parfaite, d’une tenue spéciale ou de trouver les bons mots. Viens comme tu es. C’est toi que j’ai envie de voir. ♥",
+    screenshot:"Fais une capture de ton billet et envoie-la-moi. Cette page ne transmet aucune réponse.",
+    change:"Changer notre petit programme",
+    footer:"Un peu de courage. Beaucoup d’affection. Et toi. ♡"
+  },
+  en: {
+    title:"A little letter for you 💌",
+    brand:"the little love-note office.",
+    ribbon:"FOR MY FAVORITE HUMAN",
+    introLabel:"Not a bill. Not an ad. Just me.",
+    introTitle:"A little letter.",
+    introEm:"A whole lot of feelings.",
+    open:"Open your letter",
+    letter:"psst… it’s you.",
+    introCopy:"Someone has a ridiculously big crush on you. The suspense is unbearable… Okay, it’s me. Me again. Still me. ♡",
+    tap:"Tap the envelope. There’s something I want to ask you.",
+    questionLabel:"A very seriously adorable question",
+    questionTitle:"You, me…",
+    questionEm:"a little date?",
+    questionCopy:"The plan: make you laugh, enjoy your company, and spend a suspicious amount of time smiling at you. Nothing extravagant. Just us.",
+    yes:"Yes, with you! ♥",
+    notYet:"Not yet 🙈",
+    runIntro:"This button is a little shy… try catching it. 🙈",
+    runCalm:"Even this button is taking things slowly today. 🤍",
+    runKeyboard:"With a keyboard, this button stays politely in place. 🤍",
+    jokes:[
+      "Oops… it went to find its courage. 🙈",
+      "It’s doing its romantic cardio. 🏃",
+      "This button has butterflies too. 🦋",
+      "I promise I don’t run away like this. 😂"
+    ],
+    realLater:"Another time, really 🤍",
+    gentleLabel:"Zero pressure. Lots of affection.",
+    gentleTitle:"Your pace.",
+    gentleEm:"Always.",
+    gentleCopy:"That’s completely okay. There’s no rush. In the meantime, here’s a little virtual bear, delivered with all my affection.",
+    back:"Back to the letter",
+    noPressure:"You can also just close this page. You don’t owe me an answer. ♡",
+    plannerLabel:"Playing it cool. Well… trying.",
+    plannerTitle:"Choose our",
+    plannerEm:"little happiness.",
+    plannerCopy:"No elaborate plans needed. A walk together like we love, or just a peaceful moment talking with you.",
+    activityLabel:"What would make you happy?",
+    walk:"Walking together",
+    dinner:"Dinner for two",
+    chat:"I visit you, we chat",
+    extraLabel:"And for a little something extra…",
+    ice:"Ice cream",
+    stars:"Stargazing",
+    surprise:"A little surprise",
+    confirm:"That’s our date! ✨",
+    dress:"Dress code: whatever makes you feel like you.",
+    finalLabel:"Completely failing to hide this smile",
+    finalTitle:"It’s a date.",
+    finalEm:"I can’t wait.",
+    ticketLabel:"The two-of-us club · Admit two",
+    when:"WHEN",
+    together:"We’ll choose together",
+    with:"WITH",
+    me:"Me, obviously ♡",
+    finalCopy:"The best part of this plan isn’t the place or the activity. It’s you.",
+    celebrate:"More butterflies 🦋",
+    calmCelebration:"All these little butterflies are for you. 🦋 ♡",
+    secret:"Psst… one last thing.",
+    secretCopy:"You don’t need a perfect day, a special outfit, or exactly the right words. Just come as you are. You’re the part I’m excited about. ♥",
+    screenshot:"Screenshot your ticket and send it to me. This page doesn’t send your answers anywhere.",
+    change:"Change our little plan",
+    footer:"A little courage. A lot of affection. And you. ♡"
+  }
+};
+
+const $ = id => document.getElementById(id);
+const reduced = matchMedia("(prefers-reduced-motion: reduce)");
+let language = "fr";
+let opening = false;
+let escapeCount = 0;
+let lastEscape = 0;
+let lastBurst = 0;
+let keyboardMode = false;
+let calmCelebrated = false;
+let escapeSide = false;
+
+function text(key) {
+  return translations[language][key];
+}
+
+function selection(group) {
+  return document.querySelector(
+    `#${group} [aria-pressed="true"]`
+  ).dataset.value;
+}
+
+function updateTicket() {
+  $("ticket-title").textContent = text(selection("activities"));
+  $("ticket-extra").textContent = "+ " + text(selection("extras")) + " ♡";
+}
+
+function updateHint() {
+  const jokes = translations[language].jokes;
+  $("run-hint").textContent = reduced.matches
+    ? text("runCalm")
+    : keyboardMode
+      ? text("runKeyboard")
+      : escapeCount
+        ? jokes[(escapeCount - 1) % jokes.length]
+        : text("runIntro");
+}
+
+function setLanguage(next) {
+  language = next;
+  document.documentElement.lang = next;
+  document.title = text("title");
+
+  document.querySelectorAll("[data-i18n]").forEach(node => {
+    node.textContent = text(node.dataset.i18n);
+  });
+
+  document.querySelectorAll("[data-label]").forEach(node => {
+    node.setAttribute("aria-label", text(node.dataset.label));
+  });
+
+  document.querySelectorAll("[data-lang]").forEach(button => {
+    button.setAttribute("aria-pressed", String(button.dataset.lang === next));
+  });
+
+  $("celebration-note").textContent =
+    calmCelebrated ? text("calmCelebration") : "";
+
+  updateTicket();
+  updateHint();
+  requestAnimationFrame(centerRunaway);
+}
+
+function show(id) {
+  document.querySelectorAll(".scene").forEach(scene => {
+    scene.hidden = scene.id !== id;
+    scene.classList.remove("enter");
+  });
+
+  const active = $(id);
+  active.classList.add("enter");
+  active.querySelector("h1,h2").focus({preventScroll:true});
+  window.scrollTo({top:0, behavior:"instant"});
+
+  if (id === "question") requestAnimationFrame(centerRunaway);
+}
+
+document.querySelectorAll("[data-lang]").forEach(button => {
+  button.addEventListener("click", () => setLanguage(button.dataset.lang));
+});
+
+$("envelope").addEventListener("click", () => {
+  if (opening) return;
+  opening = true;
+  $("envelope").classList.add("open");
+  setTimeout(() => show("question"), reduced.matches ? 0 : 1050);
+});
+
+$("yes").addEventListener("click", () => {
+  show("planner");
+  burst();
+});
+
+document.querySelectorAll("[data-show]").forEach(button => {
+  button.addEventListener("click", () => show(button.dataset.show));
+});
+
+document.querySelectorAll(".choices").forEach(group => {
+  group.addEventListener("click", event => {
+    const chosen = event.target.closest(".choice");
+    if (!chosen) return;
+
+    group.querySelectorAll(".choice").forEach(button => {
+      button.setAttribute("aria-pressed", String(button === chosen));
+    });
+    updateTicket();
+  });
+});
+
+$("confirm").addEventListener("click", () => {
+  updateTicket();
+  show("finale");
+  burst();
+});
+
+/* The runaway joke stays inside its own little playground.
+   Keyboard users and reduced-motion users get a normal button. */
+const runner = $("runaway");
+const runway = $("runway");
+
+function centerRunaway() {
+  if ($("question").hidden) return;
+  const x = Math.max(0, (runway.clientWidth - runner.offsetWidth) / 2);
+  runner.style.transform = `translate(${x}px, 15px)`;
+}
+
+function escape() {
+  if (reduced.matches || keyboardMode) return;
+
+  const now = Date.now();
+  if (now - lastEscape < 180) return;
+  lastEscape = now;
+  escapeCount++;
+  escapeSide = !escapeSide;
+
+  const maxX = Math.max(0, runway.clientWidth - runner.offsetWidth);
+  const maxY = Math.max(0, runway.clientHeight - runner.offsetHeight);
+  const x = escapeSide ? maxX : 0;
+  const y = escapeSide ? 0 : maxY;
+
+  runner.style.transform = `translate(${x}px, ${y}px) rotate(${escapeSide ? 5 : -5}deg)`;
+  updateHint();
+}
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Tab") {
+    keyboardMode = true;
+    centerRunaway();
+    updateHint();
+  }
+});
+
+document.addEventListener("pointerdown", () => {
+  keyboardMode = false;
+}, true);
+
+runner.addEventListener("pointerenter", event => {
+  if (event.pointerType === "mouse") escape();
+});
+
+runner.addEventListener("pointerdown", event => {
+  if (reduced.matches) return;
+  event.preventDefault();
+  escape();
+});
+
+runner.addEventListener("click", event => {
+  if (reduced.matches || keyboardMode || event.detail === 0) {
+    show("gentle");
+  } else {
+    escape();
+  }
+});
+
+window.addEventListener("resize", centerRunaway);
+
+/* Short, self-cleaning confetti bursts. No sound or tracking. */
+function burst(butterflies = false) {
+  if (reduced.matches) {
+    if (butterflies) {
+      calmCelebrated = true;
+      $("celebration-note").textContent = text("calmCelebration");
+    }
+    return;
+  }
+
+  if (!Element.prototype.animate) return;
+  const now = Date.now();
+  if (now - lastBurst < 1100) return;
+  lastBurst = now;
+
+  const symbols = butterflies ? ["🦋","♡","✧"] : ["♥","♡","✦","💕"];
+  const colors = ["#bc365f","#da82a1","#a781c9","#c5a14c"];
+
+  for (let i = 0; i < 38; i++) {
+    const particle = document.createElement("span");
+    particle.className = "particle";
+    particle.setAttribute("aria-hidden","true");
+    particle.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    particle.style.color = colors[i % colors.length];
+    document.body.appendChild(particle);
+
+    const x = Math.random() * innerWidth;
+    const drift = (Math.random() - .5) * 180;
+    const rotation = Math.random() * 440 - 220;
+
+    const animation = particle.animate([
+      {transform:`translate(${x}px,-45px) rotate(0deg)`,opacity:0},
+      {opacity:1,offset:.12},
+      {
+        transform:`translate(${x + drift}px,${innerHeight + 50}px) rotate(${rotation}deg)`,
+        opacity:0
+      }
+    ],{
+      duration:2800 + Math.random() * 1600,
+      delay:Math.random() * 500,
+      easing:"cubic-bezier(.2,.65,.5,1)",
+      fill:"both"
+    });
+
+    animation.onfinish = () => particle.remove();
+    animation.oncancel = () => particle.remove();
+  }
+}
+
+$("celebrate").addEventListener("click", () => burst(true));
+
+reduced.addEventListener("change", () => {
+  centerRunaway();
+  updateHint();
+  if (reduced.matches) {
+    document.querySelectorAll(".particle").forEach(particle => {
+      particle.getAnimations().forEach(animation => animation.cancel());
+      particle.remove();
+    });
+  }
+});
+
+setLanguage("fr");
+</script>
+</body>
+</html>

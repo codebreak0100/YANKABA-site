@@ -1,0 +1,31 @@
+.App {
+    min-height: 100vh;
+}
+
+.site-canvas {
+    overflow: hidden;
+}
+
+section {
+    isolation: isolate;
+}
+
+section:not(#top) {
+    transition: background-color 300ms ease;
+}
+
+section [class*="rounded-2xl"],
+section [class*="rounded-xl"] {
+    transition-property: transform, box-shadow, border-color, background-color;
+}
+
+section [class*="rounded-2xl"]:hover,
+section [class*="rounded-xl"]:hover {
+    will-change: transform;
+}
+
+@media (max-width: 640px) {
+    section:not(#top) {
+        scroll-margin-top: 4.5rem;
+    }
+}
