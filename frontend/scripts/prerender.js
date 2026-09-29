@@ -174,7 +174,12 @@ async function main() {
   const { chromium } = require("@playwright/test");
 
   const server = await createServer();
-  const browser = await chromium.launch();
+  
+  // Use regular chromium binary (more self-contained) instead of headless shell
+  const browser = await chromium.launch({
+    executablePath: require("@playwright/test").chromium.executablePath(),
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 
   const errors = [];
