@@ -22,7 +22,7 @@ export default function Home() {
   useSeo({
     title: "Study Abroad in Egypt, Turkey & Cyprus",
     description:
-      "YANKABA Education Consultancy helps international students discover universities in Egypt, Turkey and Cyprus, compare programmes and apply with expert guidance.",
+      "YANKABA helps international students access world-class universities in Egypt, Turkey & Cyprus with scholarships and full admission support — from application to graduation.",
     path: "/",
     image: "/images/hero/hero1.jpg",
   });
