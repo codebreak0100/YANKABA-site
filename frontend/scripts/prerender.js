@@ -171,14 +171,13 @@ async function main() {
     throw new Error("build/index.html not found — run the build first.");
   }
 
-  const { chromium } = require("@playwright/test");
+  const { webkit } = require("@playwright/test");
 
   const server = await createServer();
   
-  // Use regular chromium binary (more self-contained) instead of headless shell
-  const browser = await chromium.launch({
-    executablePath: require("@playwright/test").chromium.executablePath(),
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  // Use WebKit (more self-contained on Linux) instead of Chromium
+  const browser = await webkit.launch({
+    args: ["--no-sandbox"],
   });
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
 
