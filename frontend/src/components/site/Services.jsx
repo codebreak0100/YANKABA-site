@@ -64,7 +64,7 @@ export default function Services() {
                   </p>
                   <a
                     href="#apply"
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-[#7a0016] group-hover:text-[#D62839] transition-colors"
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-[#7a0016] group-hover:text-[#D62839] transition-colors py-2"
                   >
                     Learn more
                     <ArrowUpRight

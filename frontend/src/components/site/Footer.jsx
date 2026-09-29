@@ -33,6 +33,8 @@ export default function Footer() {
               <img
                 src="/images/logo/logo.png"
                 alt="YANKABA Education Consultancy"
+                width="120"
+                height="48"
                 className="h-12 w-auto"
               />
 

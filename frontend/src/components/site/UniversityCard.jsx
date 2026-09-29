@@ -86,7 +86,7 @@ export default function UniversityCard({ university }) {
 
         {university.founded && (
           <div className="absolute bottom-3 right-3">
-            <span className="px-3 py-1 bg-[#D62839]/90 backdrop-blur rounded-full text-[10px] font-bold text-white uppercase tracking-widest">
+            <span className="px-3 py-1 bg-[#D62839]/90 backdrop-blur rounded-full text-[11px] font-bold text-white uppercase tracking-widest">
               Est. {university.founded}
             </span>
           </div>
@@ -95,7 +95,7 @@ export default function UniversityCard({ university }) {
 
       <div className="flex flex-col flex-1 p-6">
         <h3 className="font-display font-extrabold text-xl text-gray-900 group-hover:text-[#7a0016] transition-colors">
-          <Link to={`/universities/${university.slug}`} className="after:absolute after:inset-0">
+          <Link to={`/universities/${university.slug}`} className="after:absolute after:inset-0 py-1 block">
             {university.name}
           </Link>
         </h3>

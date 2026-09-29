@@ -161,7 +161,7 @@ export default function ProgramsPage() {
                           <span className="grid h-11 w-11 place-items-center rounded-xl bg-[#fff5f5] text-[#7a0016] transition-colors group-hover:bg-brand-gradient group-hover:text-white">
                             <Icon size={20} />
                           </span>
-                          <span className="rounded-full bg-gray-100 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-gray-600">
+                          <span className="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-widest text-gray-600">
                             {program.count}{" "}
                             {program.count === 1 ? "uni" : "unis"}
                           </span>

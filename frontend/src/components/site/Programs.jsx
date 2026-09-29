@@ -176,7 +176,7 @@ export default function Programs() {
                         className="text-[#7a0016] group-hover:text-white transition-colors"
                       />
                     </div>
-                    <span className="px-2.5 py-1 bg-gray-100 group-hover:bg-[#D62839] group-hover:text-white rounded-full text-[10px] font-bold uppercase tracking-widest text-gray-600 transition-colors">
+                    <span className="px-2.5 py-1 bg-gray-100 group-hover:bg-[#D62839] group-hover:text-white rounded-full text-[11px] font-bold uppercase tracking-widest text-gray-600 transition-colors">
                       {f.duration}
                     </span>
                   </div>

@@ -53,6 +53,8 @@ export default function UniversityCover({
         loading={eager ? "eager" : "lazy"}
         decoding="async"
         sizes={sizes}
+        width="800"
+        height="550"
         onError={() => setFailed(true)}
         className={`w-full h-full object-cover ${imgClassName} ${className}`}
       />

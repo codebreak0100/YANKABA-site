@@ -9,14 +9,14 @@ export default function Breadcrumbs({ items = [], light = false }) {
   return (
     <nav aria-label="Breadcrumb" className="w-full">
       <ol
-        className={`flex flex-wrap items-center gap-1.5 text-xs font-semibold ${
+        className={`flex flex-wrap gap-1.5 text-xs font-semibold ${
           light ? "text-white/70" : "text-gray-500"
         }`}
       >
-        <li>
+        <li className="flex items-center">
           <Link
             to="/"
-            className={`inline-flex items-center gap-1 transition-colors ${
+            className={`inline-flex items-center gap-1 transition-colors px-2 h-[44px] ${
               light ? "hover:text-white" : "hover:text-[#7a0016]"
             }`}
           >
@@ -36,7 +36,7 @@ export default function Breadcrumbs({ items = [], light = false }) {
               {item.to && !isLast ? (
                 <Link
                   to={item.to}
-                  className={`transition-colors ${
+                  className={`inline-flex items-center transition-colors px-2 h-[44px] ${
                     light ? "hover:text-white" : "hover:text-[#7a0016]"
                   }`}
                 >

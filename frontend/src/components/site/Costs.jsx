@@ -141,7 +141,7 @@ export default function Costs() {
                     </p>
                   </div>
                   <div className="text-right">
-                    <p className="text-[10px] uppercase tracking-[0.25em] text-[#ffb8c0]">
+                    <p className="text-[11px] uppercase tracking-[0.25em] text-[#ffb8c0]">
                       Save up to
                     </p>
                     <p className="font-display font-extrabold text-3xl text-white">
@@ -172,7 +172,7 @@ export default function Costs() {
 
                 <div className="mt-8 pt-8 border-t border-white/15 flex items-end justify-between flex-wrap gap-4">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.25em] text-[#ffb8c0]">
+                    <p className="text-[11px] uppercase tracking-[0.25em] text-[#ffb8c0]">
                       Total cost of admission & scholarship
                     </p>
                     <p className="font-display font-extrabold text-4xl lg:text-5xl tracking-tighter">

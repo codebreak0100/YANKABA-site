@@ -41,6 +41,8 @@ export default function CountryCards() {
                 alt=""
                 aria-hidden="true"
                 loading="lazy"
+                width="600"
+                height="750"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#250006]/95 via-[#35000a]/55 to-transparent" />

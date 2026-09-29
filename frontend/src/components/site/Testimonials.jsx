@@ -40,6 +40,8 @@ export default function Testimonials() {
                   aria-hidden="true"
                   loading="lazy"
                   decoding="async"
+                  width="36"
+                  height="36"
                   className="h-9 w-9 rounded-full border-2 border-white object-cover object-top shadow-sm"
                 />
               ))}
@@ -78,6 +80,8 @@ export default function Testimonials() {
                   alt={`${t.name}, ${t.course} student from ${t.country}`}
                   loading="lazy"
                   decoding="async"
+                  width="400"
+                  height="320"
                   className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#3a0010]/85 via-[#3a0010]/10 to-transparent" />

@@ -42,6 +42,8 @@ useEffect(() => {
             aria-hidden="true"
             loading={i === 0 ? "eager" : "lazy"}
             decoding="async"
+            width="1920"
+            height="1080"
             className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-out ${
               i === currentImage ? "opacity-100" : "opacity-0"
             }`}
@@ -167,7 +169,7 @@ useEffect(() => {
                       <p className="font-display font-extrabold text-2xl lg:text-3xl text-white tracking-tighter">
                         {s.v}
                       </p>
-                      <p className="text-[10px] uppercase tracking-widest text-white/60 mt-1">
+                      <p className="text-[11px] uppercase tracking-widest text-white/60 mt-1">
                         {s.l}
                       </p>
                     </div>

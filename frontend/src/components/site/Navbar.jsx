@@ -115,6 +115,8 @@ export default function Navbar({ solid: forceSolid = false }) {
           <img
             src="/images/logo/logo.png"
             alt=""
+            width="120"
+            height="40"
             className="h-9 lg:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
           />
           <span className="flex flex-col leading-none">
@@ -128,7 +130,7 @@ export default function Navbar({ solid: forceSolid = false }) {
               YANKABA
             </span>
             <span
-              className={`mt-0.5 text-[10px] font-semibold tracking-[0.18em] uppercase transition-colors ${
+              className={`mt-0.5 text-[11px] font-semibold tracking-[0.18em] uppercase transition-colors ${
                 solid ? "text-gray-500" : "text-white/75"
               }`}
             >
@@ -146,7 +148,7 @@ export default function Navbar({ solid: forceSolid = false }) {
                 to={l.to}
                 data-testid={`nav-link-${l.testid}`}
                 aria-current={isActive ? "true" : undefined}
-                className={`text-sm font-semibold transition-colors relative group ${linkClass(l)}`}
+                className={`text-sm font-semibold transition-colors relative group inline-flex items-center ${linkClass(l)} py-3 min-h-[44px]`}
               >
                 {l.label}
                 <span
@@ -195,7 +197,7 @@ export default function Navbar({ solid: forceSolid = false }) {
           <a
             href={`tel:${CONTACT.phone}`}
             data-testid="nav-phone"
-            className={`text-sm font-semibold inline-flex items-center gap-2 transition-colors ${
+            className={`text-sm font-semibold inline-flex items-center gap-2 transition-colors py-3 min-h-[44px] ${
               solid
                 ? "text-gray-900 hover:text-[#7a0016]"
                 : "text-white hover:text-[#ffb8c0]"
@@ -236,7 +238,7 @@ export default function Navbar({ solid: forceSolid = false }) {
           <nav className="px-5 sm:px-6 py-4 flex flex-col" aria-label="Mobile">
             <Link
               to="/"
-              className="py-3.5 text-base font-semibold text-gray-800 hover:text-[#7a0016] border-b border-gray-100 transition-colors"
+              className="inline-flex items-center min-h-[44px] py-3.5 text-base font-semibold text-gray-800 hover:text-[#7a0016] border-b border-gray-100 transition-colors"
             >
               Home
             </Link>
@@ -244,7 +246,7 @@ export default function Navbar({ solid: forceSolid = false }) {
               <Link
                 key={l.to}
                 to={l.to}
-                className="py-3.5 text-base font-semibold text-gray-800 hover:text-[#7a0016] border-b border-gray-100 transition-colors"
+                className="inline-flex items-center min-h-[44px] py-3.5 text-base font-semibold text-gray-800 hover:text-[#7a0016] border-b border-gray-100 transition-colors"
               >
                 {l.label}
               </Link>
@@ -253,13 +255,13 @@ export default function Navbar({ solid: forceSolid = false }) {
             <div className="mt-4 grid grid-cols-2 gap-3">
               <Link
                 to="/universities"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-200 px-4 py-2.5 text-sm font-bold text-gray-700"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-200 px-4 py-3 text-sm font-bold text-gray-700 min-h-[44px]"
               >
                 <Heart size={15} /> Saved ({saved.length})
               </Link>
               <Link
                 to={compare.length ? `/compare?u=${compare.join(",")}` : "/compare"}
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-200 px-4 py-2.5 text-sm font-bold text-gray-700"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-200 px-4 py-3 text-sm font-bold text-gray-700 min-h-[44px]"
               >
                 <GitCompareArrows size={15} /> Compare ({compare.length})
               </Link>
@@ -267,13 +269,13 @@ export default function Navbar({ solid: forceSolid = false }) {
 
             <a
               href={`tel:${CONTACT.phone}`}
-              className="mt-4 text-sm font-semibold text-gray-700 inline-flex items-center gap-2 hover:text-[#7a0016] transition-colors"
+              className="mt-4 inline-flex items-center gap-2 min-h-[44px] py-2 text-sm font-semibold text-gray-700 hover:text-[#7a0016] transition-colors"
             >
               <Phone size={15} /> {CONTACT.phone}
             </a>
             <Link
               to="/#apply"
-              className="mt-4 mb-2 px-5 py-3.5 bg-[#D62839] hover:bg-[#7a0016] text-white text-center text-sm font-bold rounded-full transition-colors"
+              className="mt-4 mb-2 inline-flex items-center justify-center px-5 py-3.5 bg-[#D62839] hover:bg-[#7a0016] text-white text-sm font-bold rounded-full transition-colors min-h-[44px]"
             >
               Apply Now
             </Link>

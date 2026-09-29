@@ -62,6 +62,8 @@ export default function About() {
                   src={ABOUT_IMG}
                   alt="Cairo University campus in Egypt"
                   loading="lazy"
+                  width="800"
+                  height="1000"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#7a0016]/40 via-transparent to-transparent" />
@@ -87,7 +89,7 @@ export default function About() {
               <div className="absolute -top-4 -left-4 w-20 h-20 rounded-2xl bg-[#D62839] grid place-items-center text-white shadow-xl rotate-6">
                 <div className="text-center">
                    <p className="font-display font-extrabold text-xl">45+</p>
-                  <p className="text-[10px] uppercase tracking-widest">Universities</p>
+                  <p className="text-[11px] uppercase tracking-widest">Universities</p>
                 </div>
               </div>
             </div>
