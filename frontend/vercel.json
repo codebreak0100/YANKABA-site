@@ -1,0 +1,8 @@
+{
+  "framework": "create-react-app",
+  "installCommand": "npm ci",
+  "buildCommand": "npx playwright install chromium && craco build && node scripts/prerender.js",
+  "env": {
+    "VERCEL_INSTALL_PACKAGES": "libnss3 libnspr4 libatk-bridge2.0-0 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libasound2"
+  }
+}
