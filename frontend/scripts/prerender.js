@@ -100,7 +100,7 @@ function createServer() {
 }
 
 const IGNORE_CONSOLE =
-  /posthog|failed to load resource|net::|download the react devtools|favicon/i;
+  /posthog|failed to load resource|net::|download the react devtools|favicon|access control checks/i;
 
 function insertTextSeparators() {
   const insert = (node) => {
