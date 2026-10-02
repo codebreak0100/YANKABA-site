@@ -16,7 +16,7 @@ function Row({ label, children }) {
     <tr className="border-t border-gray-100">
       <th
         scope="row"
-        className="sticky left-0 z-10 bg-[#f7f6f2] px-4 py-4 text-left text-xs font-bold uppercase tracking-widest text-gray-500 align-top"
+        className="sticky left-0 z-10 bg-[#f7f6f2] px-4 py-4 text-left text-xs font-bold uppercase tracking-widest text-gray-700 align-top"
       >
         {label}
       </th>
