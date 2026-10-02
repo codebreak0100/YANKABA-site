@@ -134,10 +134,10 @@ export default function Costs() {
                 <div className="mt-6 flex items-end justify-between flex-wrap gap-4">
                   <div>
                     <p className="font-display font-extrabold text-5xl lg:text-7xl tracking-tighter leading-none">
-                      $0
+                      Contact us
                     </p>
                     <p className="mt-2 text-sm text-white/80">
-                      No cost — fully funded scholarship
+                      For scholarship details
                     </p>
                   </div>
                   <div className="text-right">
@@ -173,10 +173,10 @@ export default function Costs() {
                 <div className="mt-8 pt-8 border-t border-white/15 flex items-end justify-between flex-wrap gap-4">
                   <div>
                     <p className="text-[11px] uppercase tracking-[0.25em] text-[#ffb8c0]">
-                      Scholarship value
+                      Save up to
                     </p>
                     <p className="font-display font-extrabold text-4xl lg:text-5xl tracking-tighter">
-                      Up to $50,000
+                      $50,000
                     </p>
                   </div>
                   <a
